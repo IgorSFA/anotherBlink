@@ -8,6 +8,7 @@
 	<?php
 		echo "<h3><p style=\"text-align=center\">Workshop de Arduino</p></h3>";
 		$portaString = $_POST['porta'];
+		echo $portaString;
 		$port = fopen($portaString, "w+"); 
 		sleep(2);
 
@@ -37,7 +38,7 @@
 		fclose($port);
 	?>
 	<form action="/testes/botoes.php" method="POST">
-		<input type="hidden" name="porta" value"<?php echo $portaString ?>">
+		<input type="hidden" name="porta" value="<?php echo $portaString; ?>">
 		<input type="submit" value="Voltar">
 	</form>
 
